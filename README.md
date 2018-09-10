@@ -1,2 +1,0 @@
-# AriscoSystem
-Recommendation System Arisco
