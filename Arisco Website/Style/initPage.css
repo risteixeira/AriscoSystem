@@ -1,0 +1,76 @@
+﻿body {
+    background-color: White;
+    font-family: Helvetica;
+    counter-reset: my-sec-counter;
+    font-size: large;
+    height: 100%;
+}
+
+
+p1::before {
+    /* Increment "my-sec-counter" by 1 */
+    counter-increment: my-sec-counter;
+    content: counter(my-sec-counter) ". ";
+    font-family: Helvetica;
+    font-size: medium;
+    font-weight: bold;
+}
+
+
+h1 {
+    margin-top: 1%
+}
+
+#risk_eval{
+    margin-left:4%;
+}
+
+#ariscoName {
+    display: inherit;
+    text-align: center;
+}
+
+#subTitle {
+    font-size: large;
+}
+
+#questions {
+    margin-left: 3%;
+}
+
+
+#checkboxes {
+    margin-left: 3%;
+}
+
+#checkParagraphs {
+    display: inline-block;
+}
+
+#checkboxes_quest{
+    display: inline;
+    margin-top:1%;
+    margin-left:1%;
+}
+
+#subQuestion {
+    margin-left: 5%;
+}
+
+#subQuestStyle {
+    display: -webkit-box;
+}
+
+#loagergiff{
+    position:relative;
+    height: 100%;
+    width:100%;
+}
+
+div img{
+    top:200px;
+    left:0;
+    right:0;
+    margin:auto;   
+
+}

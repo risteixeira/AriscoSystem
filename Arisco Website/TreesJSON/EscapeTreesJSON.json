@@ -1,0 +1,34 @@
+﻿EscapeTree = {
+  "question": "Quest_11",
+  "FinalNode": false,
+  "responseNo": {
+    "FinalNode": true,
+    "response": "nao Muito Alto",
+    "id": "escape_Final_1"
+  },
+  "responseYes": {
+    "FinalNode": false,
+    "question": "Quest_18",
+    "responseNo": {
+      "FinalNode": true,
+      "response": "nao Muito Alto",
+      "id": "escape_Final_2"
+    },
+    "responseYes": {
+      "FinalNode": false,
+      "question": "Quest_8",
+      "responseNo": {
+        "FinalNode": true,
+        "id": "escape_Final_3",
+        "response": "Muito Alto"
+      },
+      "responseYes": {
+        "FinalNode": true,
+        "id": "escape_Final_4",
+        "response": "nao Muito Alto"
+      }
+    }
+  }
+}
+
+/* -------------------------------------------------------------------*/

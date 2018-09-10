@@ -1,0 +1,56 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>ARisCo</title>
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="Style/Treant.css" type="text/css" />
+    <link rel="stylesheet" href="Style/tree.css">
+    <script src="javascript/treant/vendor/raphael.js"></script>
+    <script src="javascript/treant/Treant.js"></script>
+    <link rel="stylesheet" type="text/css" href="Style/resultPage.css" />
+    <script src="javascript/resultPage.js"></script>
+    
+</head>
+<body onload="initPage()">
+        <div id="ariscoName" >
+                <img src="logo_CHLC.png" alt="logo" width="230" height="70" style="display: block;    margin-top: 2%; margin-left: 1%;left: 9px;right: 100%;top:3%;">                <h1>ARisCo</h1>
+                <p id="subTitle" style="padding-bottom: 2%;">Sistema de Recomendação para Análise de Risco em Saúde Mental da Criança e do Adolescente</p>
+                <hr noshade=noshade width="85%" />
+        </div>
+
+    <h2 style="text-align:center; margin-bottom:2%">Resumo da avaliação</h2>
+    <div id="loagergiff">
+            <img src="loading.gif" alt="loaging ..." width="300" height="300">
+    </div>
+    <div id="infoSpace" style="display:none;">
+        <div id="patient" style="padding-bottom: 1%;">
+                    <p id="pacientID" style ="margin-bottom: 1%;"></p>
+                    <p id="evaluationDate"></p>
+        </div>
+        <div id="questionaire" style="margin-left: 3%;">
+                <div id="questions" > </div> 
+        </div> 
+
+        <div id="blockEval">
+            <p id="riskTittle" style="white-space: pre"><b>Risco Suicidário: </b></p> <p class="avaliationResult" id="suicideResult_doctor"></p>
+        </div>
+
+        <div id="blockEval">
+            <p id="riskTittle" style="white-space: pre"><b>Risco de Autoagressividade: </b></p> <p id="agressResult_doctor" class="avaliationResult"></p>
+        </div>
+
+        <div id="blockEval">
+            <p id="riskTittle" style="white-space: pre"><b>Risco de Heteroagressividade: </b></p> <p id="violenceResult_doctor" class="avaliationResult"> </p>
+        </div>
+
+        <div id="blockEval">
+            <p id="riskTittle" style="white-space: pre"><b>Risco Fuga: </b></p> <p id="escapeResult_doctor" class="avaliationResult"></p>
+        </div>
+
+        <div id="blockEval">
+            <p id="riskTittle" style="white-space: pre"><b>Risco de Patologia Clínica: </b></p> <p id="patologResult_doctor" class="avaliationResult"></p>
+        </div>
+</div>
+</body>
+</html>

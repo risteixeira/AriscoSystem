@@ -1,0 +1,68 @@
+﻿suicideTree = {
+  "question": "Quest_3",
+  "FinalNode": false,
+  "responseYes" :{
+    "FinalNode" : false,
+    "question" : "Quest_1",
+    "responseYes" :{
+      "FinalNode":true,
+      "response": "Muito Alto",
+      "id": "suicide_final_6"
+    },
+    "responseNo":{
+      "FinalNode" : false,
+      "question" : "Quest_8",
+      "responseYes":{
+        "FinalNode":true,
+        "response" : "Muito Alto",
+        "id": "suicide_final_7"
+      },
+      "responseNo":{
+        "FinalNode" : true,
+        "response" : "nao Muito Alto",
+        "id" : "suicide_final_8"
+      }
+    }
+  },
+  "responseNo":{
+    "FinalNode":false,
+    "question": "suicideCounter_3",
+    "responseNo":{
+      "FinalNode":true,
+      "response": "nao Muito Alto",
+      "id":"suicide_final_5"
+    },
+    "responseYes":{
+      "FinalNode": false,
+      "question": "escapeCounter_1",
+      "responseNo":{
+        "FinalNode":true,
+        "response": "nao Muito Alto",
+        "id": "suicide_final_4"
+      },
+      "responseYes":{
+        "FinalNode": false,
+        "question": "Quest_12",
+        "responseYes":{
+          "FinalNode": true,
+          "response": "nao Muito Alto",
+          "id": "suicide_final_3"
+        },
+        "responseNo":{
+          "FinalNode": false,
+          "question": "Quest_8",
+          "responseYes":{
+            "FinalNode":true,
+            "response": "Muito Alto",
+            "id": "suicide:final_1"
+          },
+          "responseNo":{
+            "FinalNode": true,
+            "response": "nao Muito Alto",
+            "id": "suicide_final_2"
+          }
+        }
+      }
+    }
+  }
+}

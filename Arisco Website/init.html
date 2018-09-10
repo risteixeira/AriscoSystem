@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<head>
+    <title>ARisCo</title>
+    <script src="javascript/main.js"></script>
+    <script lang="javascript" src="Scripts/xlsx.full.min.js"></script>
+    <script lang="javascript" src="TreesJSON/EscapeTreesJSON.json"></script>
+    <script lang="javascript" src="TreesJSON/ViolenceTreeJSON.json"></script>
+    <script lang="javascript" src="TreesJSON/AutoAgressiveTreeJSON.json"></script>
+    <script lang="javascript" src="TreesJSON/SuicideTreeJSON.json"></script>
+    <link rel="stylesheet" type="text/css" href="Style/initPage.css" />
+
+</head>
+<body>
+    <!-- #######################################################################################################################-->
+        <div id="loagergiff" style="display:none;">
+            <img src="loading.gif" alt="loaging ..." width="300" height="300" style="position:absolute;">
+        </div>
+
+        
+            <div id="ariscoName" >
+                    <img src="logo_CHLC.png" alt="logo" width="230" height="70" style="display: block;    margin-top: 2%; margin-left: 1%;left: 9px;right: 100%;top:3%;">                
+                    <h1>ARisCo</h1>
+                <p id="subTitle">Sistema de Recomendação para Análise de Risco em Saúde Mental da Criança e do Adolescente</p>
+                <hr noshade=noshade width="85%" />
+            </div>
+            <div style="text-align: center;">
+                <form style="margin-bottom: 2%;">
+                    <p style="display: inline; margin-left: 2%;">Código de identificação do utente:</p>
+                    <input type="text" id="PatientId" placeholder="ID do utente ..." /> <br />
+                </form>
+                <div id="buttonsDiv">
+                <div>
+                    <button id="findPatientId" style="font-size: 19px;margin-bottom: 1%;" type="button" onclick="findPatientId()">Avaliar utente</button>
+                </div>
+
+                <div>
+                    <button style="font-size: 10px;" id="editResponses" type="button" onclick="showOptions()">Editar resposta fixa</button>
+                    <button style="font-size: 10px;" id="lastevals" type="button" onclick="showLastEvals()">Procurar últimas avaliações</button>
+                </div>
+            </div>
+            </div>
+
+            <div id ="lastEvalSec" style="display: none">
+                    <p>Últimas avaliações do doente:</p>
+                    <p id="displayEval1" style="margin-left: 1%"> </p>
+                    <p id="displayEval2" style="margin-left: 1%"> </p>
+                    <button style="font-size: 10px;" id="closeEvals" type="button" onclick="closeEvals()">Fechar</button>
+            </div>
+
+            <div id="QuestOptions" style="display:none;"> 
+                    <p>Pergunta fixa a alterar:</p>
+                    <select id="questionShow">
+                            <option value="1">Tentativa de suicídio:Grave (exs. enforcamento, afogamento, arma de fogo).</option>
+                            <option value="2">Tentativa de suicídio:Recorrente.</option>
+                            <option value="5">História familiar de suicídio.</option>
+                            <option value="6">Criança desprotegida (exs. ausência de figura de referência, familiar/ institucional)</option>
+                            <option value="10">História de abuso do menor.</option>
+                            <option value="11">Abuso de álcool ou subtâncias.</option>
+                            <option value="12">Sexo Masculino.</option>                     
+                    </select>
+                    <p>Resposta:</p>
+                    <select id="resposChoose" style="margin-bottom: 1%;">
+                            <option value="1">Sim</option>
+                            <option value="0">Não</option>                   
+                    </select>
+
+                    <div>
+                            <button style="font-size: 16px;" id="editResponses" type="button" onclick="alterResponse()">Alterar resposta fixa</button>
+                    </div>
+            </div>
+
+            <div id="questionnaire"style="display:none;">
+            <p style="margin-left: 2%;">Identificação de fatores para o cálculo dos riscos: <b>Suicidário</b>, <b>Autoagressividade</b>, <b>Heteroagressividade</b>, <b>Fuga</b> e <b>Patologia Clínica.</b>.</p>
+            <!-- ######## Questions ####### -->
+            <div id="section2" style="margin-left: 3%;">
+                <div id="questionsSec2" >
+                </div> 
+            </div> 
+            <div id = "section1" style="margin-left: 3%;">
+                    <hr noshade=noshade width="85%" />
+                    <div id="questionsSec1" >
+                    </div> 
+            </div> 
+
+            <hr noshade=noshade width="85%" />
+            <p style="margin-left: 2%; margin-top:2%;">Níveis de risco a atribuir ao utente: </p>
+            <p style="margin-left: 3%;margin-bottom:1%; font-size: smaller;">Selecione o nível de risco que considere o mais adequado a atribuir ao utente. </p>
+            <div id="risk_eval">
+                <div style="margin-bottom:1%;margin-top:1%;">
+                    <p2> <b>Risco Suicidário:</b></p2>
+                    <div id="checkboxes_quest">
+                        Muito Alto  <input id="suicide_risk_doctor" name="suicide_risk" type="radio" onclick="newcheckBoxes(this.id)" />
+                        não Muito Alto <input id="suicide_risk_doctor" name="suicide_risk" type="radio" onclick="newcheckBoxes(this.id)" />
+                    </div>
+                </div>
+                <div style="margin-bottom:1%;margin-top:1%;">
+                    <p2> <b>Risco Autoagrassividade: </b></p2>
+                    <div id="checkboxes_quest">
+                        Muito Alto  <input id="autoagress_risk_doctor" name="autoagress_risk" type="radio" onclick="newcheckBoxes(this.id)" />
+                        não Muito Alto <input id="autoagress_risk_doctor" name="autoagress_risk" type="radio" onclick="newcheckBoxes(this.id)" />
+                    </div>
+                </div>
+                <div style="margin-bottom:1%;margin-top:1%;">
+                    <p2><b>Risco Heteroagressividade:</b> </p2>
+                    <div id="checkboxes_quest">
+                        Muito Alto  <input id="violence_risk_doctor" name="violence_risk" type="radio" onclick="newcheckBoxes(this.id)" />
+                        não Muito Alto <input id="violence_risk_doctor" name="violence_risk" type="radio" onclick="newcheckBoxes(this.id)" />
+                    </div>
+                </div>
+                <div style="margin-bottom:1%;margin-top:1%;">
+                    <p2><b>Risco de Fuga: </b></p2>
+                    <div id="checkboxes_quest">
+                        Muito Alto  <input id="escape_risk_doctor" name="escape_risk" type="radio" onclick="newcheckBoxes(this.id)" />
+                        não Muito Alto <input id="escape_risk_doctor" name="escape_risk" type="radio" onclick="newcheckBoxes(this.id)" />
+                    </div>
+                </div>
+                <div style="margin-bottom:1%;margin-top:1%;">
+                    <p2><b>Risco de Patologia Clinica:</b> </p2>
+                    <div id="checkboxes_quest">
+                        Muito Alto  <input id="patolog_risk_doctor" name="patolog_risk" type="radio" onclick="newcheckBoxes(this.id)" />
+                        não Muito Alto <input id="patolog_risk_doctor" name="patolog_risk" type="radio" onclick="newcheckBoxes(this.id)" />
+                    </div>
+                </div>
+            </div> <!-- ### END RISK QUESTIONS ###-->
+            <div style="text-align:center">
+                <button id="submitButton" type="button" onclick="post()">Submeter</button>
+            </div>
+        </div>
+    <div id="loagergiff">
+        
+    </div>
+</body>

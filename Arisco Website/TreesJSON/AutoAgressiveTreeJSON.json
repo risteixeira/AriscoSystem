@@ -1,0 +1,23 @@
+﻿autoAgressTree = {
+  "question": "Quest_14",
+  "FinalNode": false,
+  "responseYes": {
+    "FinalNode": true,
+    "response": "Muito Alto",
+    "id": "agress_final_1"
+  },
+  "responseNo": {
+    "FinalNode": false,
+    "question": "Quest_13",
+    "responseYes": {
+      "FinalNode": true,
+      "response": "Muito Alto",
+      "id": "agress_final_2"
+    },
+    "responseNo": {
+      "FinalNode": true,
+      "response": "nao Muito Alto",
+      "id": "agress_final_3"
+    }
+  }
+}

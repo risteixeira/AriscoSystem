@@ -1,0 +1,33 @@
+﻿ViolenceTree = {
+  "question": "Quest_17",
+  "FinalNode": false,
+  "responseYes": {
+    "FinalNode": true,
+    "response": "Muito Alto",
+    "id": "violence_final_1"
+  },
+  "responseNo": {
+    "FinalNode": false,
+    "question": "Quest_15",
+    "responseNo": {
+      "FinalNode": true,
+      "response": "nao Muito Alto",
+      "id": "violence_final_2"
+    },
+    "responseYes": {
+      "FinalNode": false,
+      "question": "Quest_16",
+      "responseNo": {
+        "FinalNode": true,
+        "response": "nao Muito Alto",
+        "id": "violence_final_3"
+      },
+      "responseYes": {
+        "FinalNode": true,
+        "response": "Muito Alto",
+        "id": "violence_final_4"
+      }
+    }
+  }
+
+}
