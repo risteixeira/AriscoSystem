@@ -1,3 +1,10 @@
+/*-------------------------------------------------------
+----------------- ARISCO SYSTEM  BD----------------------
+------- ANA TEIXEIRA  ---- 10 SEPTEMBER -----------------
+---------------------------------------------------------
+*/
+
+
 create table questions(
 	id int auto_increment primary key,
     questOrder int,

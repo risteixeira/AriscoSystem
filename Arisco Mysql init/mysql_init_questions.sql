@@ -1,3 +1,10 @@
+/*-------------------------------------------------------
+----------------- ARISCO SYSTEM  BD----------------------
+------- ANA TEIXEIRA  ---- 10 SEPTEMBER -----------------
+---------------------------------------------------------
+*/
+
+
 insert into questions values (1, 1, 'Tentativa de suicídio:Grave (exs. enforcamento, afogamento, arma de fogo).', 1, 'suicidio',null,1,1);
 
 insert into questions values (2, 2, 'Tentativa de suicídio:Recorrente.', 1, 'suicidio',null,1,1);
