@@ -12,9 +12,9 @@ const port = process.env.PORT || 3000;
 //Create connection
 const db = mysql.createConnection({
 	host : 'db.tecnico.ulisboa.pt',
-	user: 'ist176969',
-	password : 'gwsk3761',
-	database : 'ist176969',
+	user: 'ist1712345',
+	password : '123456',
+	database : 'ist1712345',
 });
 
 //Connect
